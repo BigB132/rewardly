@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>View Ads - Rewardly</title>
+    
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        background-color: #181818;
+        color: white;
+      }
+      
+      .header {
+        text-align: center;
+      }
+      
+      .content {
+        text-align: center;
+      }
+      
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        background-color: #c200cc;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        Earn
+      </h1>
+    </div>
+    <div class="content">
+        <p id="username"></p>
+      
+        <a href="#" class="button" id="btn">Earn Robux</a>
+    </div>
+    
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const name = urlParams.get('username');
+      
+      const userNameTxt = document.getElementById('username');
+      userNameTxt.innerHTML = 'User: ' + name;
+      
+      const btn = document.getElementById('btn');
+      btn.href = `https://link-hub.net/1328821/${name}`
+    </script>
+  </body>
+</html>
