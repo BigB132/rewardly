@@ -57,9 +57,23 @@
       const userNameTxt = document.getElementById('username');
       userNameTxt.innerHTML = 'User: ' + name;
       
-      const btn = document.getElementById('btn');
-      btn.href = `https://rewardly.netlify.app/earn?username=${name}`
+      const randomString = Math.random().toString(36).substring(2, 15);
+      
+      btn.setAttribute("href", `https://link-target.net/1328821/${name.toLowerCase()}`);
+
+      const API_URL = "https://silver-space-xylophone-wrr64v5gwpv7h65w-3000.app.github.dev/api/registercode";
+
+      async function registerCode() {
+        try {
+          const res = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ coincode: randomString, username: name })
+          });
+        } catch (error) {}
+      }
+      
+      registerCode();
     </script>
-    <script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script><script>linkvertise(1328821, {whitelist: [], blacklist: [""]});</script>
   </body>
 </html>
